@@ -27,3 +27,10 @@ export OS_AUTH_URL=http://127.0.0.1:5000/v2.0/
 export OS_VERSION=1.1
 export OS_NO_CACHE=1
 " > stackrc
+
+
+#FIX A BUG
+sed -i "s/^quantum/#quantum/" /etc/sudoers.d/quantum_sudoers
+echo "quantum ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers.d/quantum_sudoers
+
+#this install is using sqlite db :(
