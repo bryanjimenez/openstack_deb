@@ -1,0 +1,418 @@
+2013-10-04 10:26:23     INFO [quantum.common.config] Logging enabled!
+2013-10-04 10:26:23     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Bridge mappings: {}
+2013-10-04 10:26:23    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 -- --if-exists del-port br-int patch-tun
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', '--', '--if-exists', 'del-port', 'br-int', 'patch-tun']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-ofctl del-flows br-int
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-ofctl', 'del-flows', 'br-int']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-ofctl add-flow br-int hard_timeout=0,idle_timeout=0,priority=1,actions=normal
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-ofctl', 'add-flow', 'br-int', 'hard_timeout=0,idle_timeout=0,priority=1,actions=normal']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 -- --if-exists del-br br-tun
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', '--', '--if-exists', 'del-br', 'br-tun']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 add-br br-tun
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'add-br', 'br-tun']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 add-port br-int patch-tun
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'add-port', 'br-int', 'patch-tun']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 set Interface patch-tun type=patch
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'set', 'Interface', 'patch-tun', 'type=patch']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 set Interface patch-tun options:peer=patch-int
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'set', 'Interface', 'patch-tun', 'options:peer=patch-int']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun ofport
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'ofport']
+Exit code: 0
+Stdout: '7\n'
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 add-port br-tun patch-int
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'add-port', 'br-tun', 'patch-int']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 set Interface patch-int type=patch
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'set', 'Interface', 'patch-int', 'type=patch']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 set Interface patch-int options:peer=patch-tun
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'set', 'Interface', 'patch-int', 'options:peer=patch-tun']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-int ofport
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-int', 'ofport']
+Exit code: 0
+Stdout: '1\n'
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-ofctl del-flows br-tun
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-ofctl', 'del-flows', 'br-tun']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-ofctl add-flow br-tun hard_timeout=0,idle_timeout=0,priority=1,actions=drop
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-ofctl', 'add-flow', 'br-tun', 'hard_timeout=0,idle_timeout=0,priority=1,actions=drop']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [amqplib] Start from server, version: 8.0, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2012 VMware, Inc.', u'capabilities': {}, u'platform': u'Erlang/OTP', u'version': u'2.8.4'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+2013-10-04 10:26:24    DEBUG [amqplib] Open OK! known_hosts []
+2013-10-04 10:26:24    DEBUG [amqplib] using channel_id: 1
+2013-10-04 10:26:24    DEBUG [amqplib] Channel open
+2013-10-04 10:26:24     INFO [quantum.openstack.common.rpc.common] Connected to AMQP server on localhost:5672
+2013-10-04 10:26:24     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Agent initialized successfully, now running... 
+2013-10-04 10:26:24     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Agent out of sync with plugin!
+2013-10-04 10:26:24     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Agent tunnel out of sync with plugin!
+2013-10-04 10:26:24    DEBUG [quantum.openstack.common.rpc.amqp] Making asynchronous call on q-plugin ...
+2013-10-04 10:26:24    DEBUG [quantum.openstack.common.rpc.amqp] MSG_ID is 1085d00ec3be4c0ba4c1eceb54f8f710
+2013-10-04 10:26:24    DEBUG [quantum.openstack.common.rpc.amqp] Pool creating new connection
+2013-10-04 10:26:24    DEBUG [amqplib] Start from server, version: 8.0, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2012 VMware, Inc.', u'capabilities': {}, u'platform': u'Erlang/OTP', u'version': u'2.8.4'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+2013-10-04 10:26:24    DEBUG [amqplib] Open OK! known_hosts []
+2013-10-04 10:26:24    DEBUG [amqplib] using channel_id: 1
+2013-10-04 10:26:24    DEBUG [amqplib] Channel open
+2013-10-04 10:26:24     INFO [quantum.openstack.common.rpc.common] Connected to AMQP server on localhost:5672
+2013-10-04 10:26:24    DEBUG [quantum.openstack.common.rpc.amqp] received {u'_context_request_id': u'req-4e7edbe3-bc0a-47a7-a6e1-274d19ce1ee1', u'args': {u'tunnel_ip': u'172.23.18.239', u'tunnel_id': 1}, u'_context_show_deleted': False, u'_context_tenant': None, u'_context_auth_token': '<SANITIZED>', u'_context_is_admin': False, u'version': u'1.0', u'_context_read_only': False, u'_context_user': u'quantum', u'method': u'tunnel_update'}
+2013-10-04 10:26:24    DEBUG [quantum.openstack.common.rpc.amqp] unpacked context: {'read_only': False, 'show_deleted': False, 'auth_token': '<SANITIZED>', 'is_admin': False, 'user': u'quantum', 'request_id': u'req-4e7edbe3-bc0a-47a7-a6e1-274d19ce1ee1', 'tenant': None}
+2013-10-04 10:26:24    DEBUG [quantum.plugins.openvswitch.agent.ovs_quantum_agent] tunnel_update received
+2013-10-04 10:26:24    DEBUG [amqplib] Closed channel #1
+2013-10-04 10:26:24    DEBUG [amqplib] using channel_id: 1
+2013-10-04 10:26:24    DEBUG [amqplib] Channel open
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:24    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:25    DEBUG [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Agent loop has new devices!
+2013-10-04 10:26:25     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Port 6b34423a-c701-4cfc-955b-0eaa1458995c added
+2013-10-04 10:26:25    DEBUG [quantum.openstack.common.rpc.amqp] Making asynchronous call on q-plugin ...
+2013-10-04 10:26:25    DEBUG [quantum.openstack.common.rpc.amqp] MSG_ID is b14098b1536b459396891c4736190313
+2013-10-04 10:26:25    DEBUG [amqplib] Closed channel #1
+2013-10-04 10:26:25    DEBUG [amqplib] using channel_id: 1
+2013-10-04 10:26:25    DEBUG [amqplib] Channel open
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 -- --columns=external_ids,name,ofport find Interface external_ids:iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c"
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', '--', '--columns=external_ids,name,ofport', 'find', 'Interface', 'external_ids:iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c"']
+Exit code: 0
+Stdout: 'external_ids        : {attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\nname                : "tap6b34423a-c7"\nofport              : 1\n'
+Stderr: ''
+2013-10-04 10:26:25     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Port 6b34423a-c701-4cfc-955b-0eaa1458995c updated. Details: {u'admin_state_up': True, u'network_id': u'd57206b6-56c8-4a74-9ce4-0ca35463dbe4', u'segmentation_id': None, u'physical_network': None, u'device': u'6b34423a-c701-4cfc-955b-0eaa1458995c', u'port_id': u'6b34423a-c701-4cfc-955b-0eaa1458995c', u'network_type': u'local'}
+2013-10-04 10:26:25     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Assigning 1 as local vlan for net-id=d57206b6-56c8-4a74-9ce4-0ca35463dbe4
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 set Port tap6b34423a-c7 tag=1
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'set', 'Port', 'tap6b34423a-c7', 'tag=1']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-ofctl del-flows br-int in_port=1
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-ofctl', 'del-flows', 'br-int', 'in_port=1']
+Exit code: 0
+Stdout: ''
+Stderr: ''
+2013-10-04 10:26:25     INFO [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Port d970fc0f-8e08-4778-aa2c-221e363bc873 added
+2013-10-04 10:26:25    DEBUG [quantum.openstack.common.rpc.amqp] Making asynchronous call on q-plugin ...
+2013-10-04 10:26:25    DEBUG [quantum.openstack.common.rpc.amqp] MSG_ID is 3225619bc4bc4877b368c8cdb5a22cd5
+2013-10-04 10:26:25    DEBUG [amqplib] Closed channel #1
+2013-10-04 10:26:25    DEBUG [amqplib] using channel_id: 1
+2013-10-04 10:26:25    DEBUG [amqplib] Channel open
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 -- --columns=external_ids,name,ofport find Interface external_ids:iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873"
+2013-10-04 10:26:25    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', '--', '--columns=external_ids,name,ofport', 'find', 'Interface', 'external_ids:iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873"']
+Exit code: 0
+Stdout: 'external_ids        : {attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\nname                : "qvod970fc0f-8e"\nofport              : -1\n'
+Stderr: ''
+2013-10-04 10:26:25    DEBUG [quantum.plugins.openvswitch.agent.ovs_quantum_agent] Device d970fc0f-8e08-4778-aa2c-221e363bc873 not defined on plugin
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:26    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:27    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:28    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:29    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:30    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:31    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:32    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:33    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:34    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:35    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:36    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:36    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:36    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:36    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:36    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:37    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:37    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:37    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:38    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:39    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:40    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:41    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:42    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:43    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 list-ports br-int
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'list-ports', 'br-int']
+Exit code: 0
+Stdout: 'patch-tun\nqvod970fc0f-8e\ntap6b34423a-c7\n'
+Stderr: ''
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface patch-tun external_ids
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'patch-tun', 'external_ids']
+Exit code: 0
+Stdout: '{}\n'
+Stderr: ''
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface qvod970fc0f-8e external_ids
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'qvod970fc0f-8e', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:64:95:1b", iface-id="d970fc0f-8e08-4778-aa2c-221e363bc873", iface-status=active, vm-uuid="85ae9a7a-e4ae-4811-b78a-ab33badb82a7"}\n'
+Stderr: ''
+2013-10-04 10:26:44    DEBUG [quantum.agent.linux.utils] Running command: sudo /usr/bin/quantum-rootwrap /etc/quantum/rootwrap.conf ovs-vsctl --timeout=2 get Interface tap6b34423a-c7 external_ids
+2013-10-04 10:26:45    DEBUG [quantum.agent.linux.utils] 
+Command: ['sudo', '/usr/bin/quantum-rootwrap', '/etc/quantum/rootwrap.conf', 'ovs-vsctl', '--timeout=2', 'get', 'Interface', 'tap6b34423a-c7', 'external_ids']
+Exit code: 0
+Stdout: '{attached-mac="fa:16:3e:62:6c:c8", iface-id="6b34423a-c701-4cfc-955b-0eaa1458995c", iface-status=active}\n'
+Stderr: ''

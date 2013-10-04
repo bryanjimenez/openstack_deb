@@ -8,6 +8,10 @@ nova-api
 nova-scheduler
 nova-consoleauth
 nova-console
+quantum-plugin-openvswitch-agent
+quantum-server
+quantum-dhcp-agent
+quantum-l3-agent
 cinder-volume
 cinder-api
 cinder-scheduler
