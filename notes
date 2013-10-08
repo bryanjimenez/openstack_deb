@@ -1,4 +1,3 @@
-
 possible conver from quatum to nova-network
 https://github.com/nii-cloud/dodai-deploy/issues/35
 
@@ -14,4 +13,11 @@ https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/issues/32
 
 https://ask.openstack.org/en/question/2723/cant-reach-metadata-server-from-vm-running-in-single-instance-setup/
 
+
+
+#fixed region in l3-agent.ini
+
+
+#[Libguestfs] "ext2: parent directory not found"
+update-guestfs-appliance
 
