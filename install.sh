@@ -17,8 +17,8 @@ sed -i "s/changeme/ADMIN/" ./preseeder
 
 apt-get install openstack-toaster
 
-echo "export SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
-export SERVICE_TOKEN=ADMIN
+echo "#export SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
+#export SERVICE_TOKEN=ADMIN
 
 export OS_USERNAME=admin
 export OS_PASSWORD=ADMIN
