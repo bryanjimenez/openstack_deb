@@ -23,3 +23,6 @@ update-guestfs-appliance
 
 #fixed quantum_admin_password in nova.conf
 sed -i "s/^quantum_admin_password = .*/quantum_admin_password = hey/" /etc/nova/nova.conf
+
+#cleaun ovs
+quantum-ovs-cleanup
