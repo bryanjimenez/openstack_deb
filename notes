@@ -21,3 +21,5 @@ https://ask.openstack.org/en/question/2723/cant-reach-metadata-server-from-vm-ru
 #[Libguestfs] "ext2: parent directory not found"
 update-guestfs-appliance
 
+#fixed quantum_admin_password in nova.conf
+sed -i "s/^quantum_admin_password = .*/quantum_admin_password = hey/" /etc/nova/nova.conf
