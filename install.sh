@@ -1,5 +1,7 @@
 #!/bin/sh
 
+apt-get install build-essential linux-headers-`uname -r`
+
 echo "deb http://archive.gplhost.com/debian openstack main
 deb http://archive.gplhost.com/debian wheezy-backports main" >> /etc/apt/sources.list
 
@@ -34,3 +36,4 @@ sed -i "s/^quantum/#quantum/" /etc/sudoers.d/quantum_sudoers
 echo "quantum ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers.d/quantum_sudoers
 
 #this install is using sqlite db :(
+nova-manage db sync
