@@ -32,7 +32,7 @@
 #######################
 
 # remove osapi_volume from api
-#sed -i "s/ec2,osapi_compute,metadata,osapi_volume/ec2,osapi_compute,metadata/g" /etc/nova/nova.conf
+sed -i "s/ec2,osapi_compute,metadata,osapi_volume/ec2,osapi_compute,metadata/g" /etc/nova/nova.conf
 
 # commented all quantum section
 sed -i "s/^network_api_class = nova.network.quantumv2.api.API/#network_api_class = nova.network.quantumv2.api.API/g" /etc/nova/nova.conf
@@ -42,11 +42,12 @@ sed -i "s/^linuxnet_interface_driver = nova.network.linux_net.LinuxOVSInterfaceD
 sed -i "s/^firewall_driver = nova.virt.libvirt.firewall.IptablesFirewallDriver/#firewall_driver = nova.virt.libvirt.firewall.IptablesFirewallDriver/g" /etc/nova/nova.conf
 
 # network setup
+sed -i "s/^#network_api_class=nova.network.api.API/network_api_class=nova.network.api.API/" /etc/nova/nova.conf
 sed -i "s/^#network_manager=nova.network.manager.VlanManager/network_manager=nova.network.manager.FlatDHCPManager/g" /etc/nova/nova.conf
 sed -i "s/^#force_dhcp_release/force_dhcp_release/g" /etc/nova/nova.conf
 sed -i "s/^#dhcpbridge_flagfile/dhcpbridge_flagfile/g" /etc/nova/nova.conf
 sed -i "s/^#dhcpbridge/dhcpbridge/g" /etc/nova/nova.conf
-sed -i "187iauto_assign_floating_ip=True" /etc/nova/nova.conf
+#sed -i "187iauto_assign_floating_ip=True" /etc/nova/nova.conf
 
 
 ######################
