@@ -42,7 +42,7 @@ sed -i "s/^linuxnet_interface_driver = nova.network.linux_net.LinuxOVSInterfaceD
 sed -i "s/^firewall_driver = nova.virt.libvirt.firewall.IptablesFirewallDriver/#firewall_driver = nova.virt.libvirt.firewall.IptablesFirewallDriver/g" /etc/nova/nova.conf
 
 # network setup
-sed -i "s/^#network_api_class=nova.network.api.API/network_api_class=nova.network.api.API/" /etc/nova/nova.conf
+sed -i "s/^#network_api_class=\"nova.network.api.API\"/network_api_class=\"nova.network.api.API\"/" /etc/nova/nova.conf
 sed -i "s/^#network_manager=nova.network.manager.VlanManager/network_manager=nova.network.manager.FlatDHCPManager/g" /etc/nova/nova.conf
 sed -i "s/^#force_dhcp_release/force_dhcp_release/g" /etc/nova/nova.conf
 sed -i "s/^#dhcpbridge_flagfile/dhcpbridge_flagfile/g" /etc/nova/nova.conf
@@ -67,7 +67,7 @@ nova-manage network create private --fixed_range_v4=10.0.0.0/25 --num_networks=1
 #nova-manage floating create --ip_range=172.23.12.0/24
 
 # Restart services
-./stackswitch.sh restart
+./switch.sh restart
 
 # Show the network
 nova-manage network list
