@@ -4,7 +4,7 @@
 # CINDER
 ################
 # temporary fix
-#sed -i 's/"//g' /etc/cinder/api-paste.ini
+sed -i 's/"//g' /etc/cinder/api-paste.ini
 
 
 #################
@@ -19,12 +19,12 @@
 
 # create service for daemon
 
-#cp /etc/init.d/skeleton /etc/init.d/tgtd
-#sed -i "s/^NAME=.*/NAME=tgtd/g" /etc/init.d/tgtd
-#sed -i "s/^DESC=.*/DESC='Linux SCSI target framework'/g" /etc/init.d/tgtd
-#sed -i "s/^DAEMON_ARGS=.*/DAEMON_ARGS=''/g" /etc/init.d/tgtd
-#chmod +x /etc/init.d/tgtd
-#chkconfig --add tgtd
+cp /etc/init.d/skeleton /etc/init.d/tgtd
+sed -i "s/^NAME=.*/NAME=tgtd/g" /etc/init.d/tgtd
+sed -i "s/^DESC=.*/DESC='Linux SCSI target framework'/g" /etc/init.d/tgtd
+sed -i "s/^DAEMON_ARGS=.*/DAEMON_ARGS=''/g" /etc/init.d/tgtd
+chmod +x /etc/init.d/tgtd
+chkconfig --add tgtd
 
 
 #######################
@@ -97,3 +97,7 @@ echo ''
 echo 'Be careful this will destroy data!!!'
 echo '################################################################'
 
+
+# check nano /etc/cinder/api-paste.ini
+# if auth_host has  "" around the ip fix it!!!!
+# this breaks the dashboard
