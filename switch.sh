@@ -2,6 +2,7 @@
 
 SERV="libvirt-bin
 keystone
+rabbitmq-server
 nova-network
 nova-compute
 nova-cert
