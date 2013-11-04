@@ -5,3 +5,9 @@ umount <path to your logical volume>
 # then deactivate any logical volumes
 lvchange -a n <path to your logical volume>
 # repeat for each logical volume you have 
+
+# lvremove <path>
+
+# vgchange -a n my_volume_group
+
+# vgremove my_volume_group
